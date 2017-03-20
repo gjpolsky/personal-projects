@@ -43,25 +43,61 @@ def question_3():
 	text = f.read()
 	text = text.replace("\n","")
 
-	text_list = split(text)
+	text_list = list(text)
 
-	big_start = 0
-	little = 0
-	big_finish
-	for letter in text_list:
-		if big_start > 3:
-			big_start = 0
-		if !letter.islittle and big_start < 3:
-			big_start += 1
-		if big_start == 3 and letter.islittle and big_finish == 0:
-			little = 1
-		if big_start == 3 and little == 1:
-			big_finish += 1
-		if big_start == 3 and big_finish == 3 and little == 1:
-			
+	i = 0
+	small_letters = []
+	while i < len(text_list) - 9:
+		substring = text_list[i:i+9]
+		i += 1
+		l1 = substring[0]
+		l2 = substring[1]
+		l3 = substring[2]
+		l4 = substring[3]
+		l5 = substring[4]
+		l6 = substring[5]
+		l7 = substring[6]
+		l8 = substring[7]
+		l9 = substring[8]
 
-question_3()
+		if l1.islower() and l2.isupper() and l3.isupper() and l4.isupper() and l5.islower() and l6.isupper() and l7.isupper() and l8.isupper() and l9.islower():
+			small_letters.append(l5)
+			print "".join(substring)
+		else:
+			substring = []
 
+	print "".join(small_letters)
+
+	# big_start = 0
+	# little = 0
+	# big_finish = 0
+	# letters = []
+	# for letter in text_list:
+	# 	if big_start == 3 and big_finish == 3 and little == 1:
+	# 		print "finish"
+	# 		print "".join(letters)
+	# 	elif letter.isupper and big_start < 3:
+	# 		big_start += 1
+	# 		letters.append(letter)
+	# 		print "add to start"
+	# 	elif big_start == 3 and letter.islower and big_finish == 0 and little == 0:
+	# 		little = 1
+	# 		letters.append(letter)
+	# 		print "add little"
+	# 	elif big_start == 3 and little == 1 and letter.isupper and big_finish < 3:
+	# 		big_finish += 1
+	# 		letters.append(letter)
+	# 	if big_start > 3 or little > 1 or big_finish > 3:
+	# 		big_start = 0
+	# 		little = 0
+	# 		big_finish = 0
+	# 		letters = []
+	# 		print "reset"
+
+
+#http://www.pythonchallenge.com/pc/def/linkedlist.php
+def question_4():
+	pass
 
 
 
