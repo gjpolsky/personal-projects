@@ -109,15 +109,13 @@ def question_4():
 
 #http://www.pythonchallenge.com/pc/def/peak.html
 def question_5():
-	# f = open("banner.p", "rb")
+	f = open("banner.p", "rb")
+	unpickled_file = pickle.load(f)
 
-	# # unpickled_file = pickle.load(f)
-	# unpickled_file = pickle.load(f)
+	for row in unpickled_file:
+		print "".join([key * value for key, value in row])
 
-	with open("banner.p", "rb") as f:
-		pickletools.dis(f)
 
-	print unpickled_file
-
-question_5()
-
+#http://www.pythonchallenge.com/pc/def/channel.html
+def question_6():
+	pass
