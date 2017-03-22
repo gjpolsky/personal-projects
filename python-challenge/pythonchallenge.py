@@ -118,4 +118,14 @@ def question_5():
 
 #http://www.pythonchallenge.com/pc/def/channel.html
 def question_6():
-	pass
+	key = 90052
+	while open("channel/" + str(key) + ".txt"):
+		f = open("channel/" + str(key) + ".txt")
+		text = f.read()
+		print text
+
+
+
+
+
+
