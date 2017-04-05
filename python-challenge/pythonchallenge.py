@@ -3,6 +3,7 @@ import lxml.html
 import re
 import pickle
 import pickletools
+import zipfile
 
 #Question 0
 def question_0():
@@ -121,11 +122,27 @@ def question_6():
 	key = 90052
 	while open("channel/" + str(key) + ".txt"):
 		f = open("channel/" + str(key) + ".txt")
-		text = f.read()
-		print text
+		text = f.read()	
 
+		try:
+			key = re.search(r"\d+",text).group(0)
+			zip_file = "channel/" + key + ".txt"
+			try:
+				zp = zipfile.ZipFile(zip_file)
+				print zp.comment
+			except zipfile.BadZipfile, e:
+				pass
+		except AttributeError, e:
+			print key
+			break
 
+	# with zipfile.ZipFile("channel.zip") as channel_zip:
+	# 	data = channel_zip.getinfo()
+	# print "hello"
+	# print data.comment
+	# print data.filename
 
+question_6()
 
 
 
